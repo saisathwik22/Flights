@@ -61,7 +61,7 @@ npx sequelize init
 
 - It created a `/src/models/index.js` file, containing the configuration code inside `index.js` file. (We didn't have models file inside src)
 
-- It also created a `src/seeders` folder.
+- It also created a `src/seeders` and `src/migrations` folders.
 
 ### `config.json` :
 
