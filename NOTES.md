@@ -72,3 +72,31 @@ npx sequelize init
 `Test environment` : Database created for QA folks, to test the feature created by developers. Maybe while testing the feature, they may encounter bugs. So, to refrain them from using development or production enviroment while testing, test environment is created.
 
 `Production enviroment` : Once development, testing is done, the feature is released on production database for end-users to connect and interact.
+
+```bash
+"dialect": "mysql"
+```
+
+- It indicates that, this project's ORM sequelize is going to connect to mysql database.
+- Sequelize automatically detected that we are going to connect with mysql using package.json.
+- If there are multiple drivers, it might put some default database in dialect, then we have to change it manually to whichever database we are using.
+
+```bash
+"host": "127.0.0.1"
+```
+
+- It fetches the URL of server, where the mysql database has been deployed/hosted.
+- Our system by default runs the mysql server at localhost, as we know `localhost` can be replaced with `127.0.0.1` .
+- The default port of mysql is `3306`, if there is any change in default port, then only its mentioned with host address, else it's not required.
+
+```bash
+"username": "your_username",
+"password": "your_password",
+"database": "database_name",
+```
+
+- The username, password, database are simple to setup.
+- Database name might be among development, test, production.
+
+- `config.json` file contains sensitive information, so hide it out using gitignore.
+- Put up the dummy format of `config.json` file in README file for others to understand.
