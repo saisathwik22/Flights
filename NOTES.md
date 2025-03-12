@@ -63,6 +63,13 @@ npx sequelize init
 
 - It also created a `src/seeders` and `src/migrations` folders.
 
+### Some of the sequelize commands:
+
+- `sequelize db:migrate` - creates new version your database at any point of time.
+- `sequelize db:migrate:undo` - reverts migrations
+- `sequelize migration:create` - creates new migration files to mention your changes.
+- `sequelize db:migrate:status` - status of your migrations.
+
 ### `config.json` :
 
 - It gives us configuration for 3 environments i.e., development, test and production.

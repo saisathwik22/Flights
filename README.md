@@ -13,7 +13,7 @@ Let's take a look inside the `src` folder
 
 - `middlewares` : They are just going to intercept the incoming requests where we can write our validators, authenticators etc.
 
-- `controllers` : They are kind of last middlewares as post them you call your business layer to execute the business logic. In controllers, we just recieve the incoming requests and data and then pass it to the business layer, and once business layer returns an output, we structure the API response in controllers and send the output.
+- `controllers` : They are a kind of last middlewares as post them you call your business layer to execute the business logic. In controllers, we just recieve the incoming requests and data and then pass it to the business layer, and once business layer returns an output, we structure the API response in controllers and send the output.
 
 - `repositories` : This folder contains all the logic using which we interact the DB by writing queries. All the raw queries or ORM queries will go here.
 
@@ -21,9 +21,17 @@ Let's take a look inside the `src` folder
 
 - `utils` : It contains helper methods, error classes etc.
 
+- `migrations` : Every framework like Laravel, Django, Rails has migrations. It is used to do version control of your database(upgrading and downgrading your database for features). Migrations are simple language scripts, if node.js & sequelize they are javascript files, if ruby on rails used they are ruby files.
+
+- `seeders` : Created for defining roles, which automatically populates your database.
+
 ### Setup the project
 
 - Download this template from github and open it in your favourite text editor.
+- Go inside the folder path and execute following command:
+  ```
+    npm install
+  ```
 - In the root director create a `.env` file and add the following env variables.
   ```
      PORT=<port number of your choice>
@@ -31,6 +39,10 @@ Let's take a look inside the `src` folder
   ex:
   ```
      PORT=3000
+  ```
+- Go inside the `src` folder and execute following command to automatically obtain migrations, seeders folders along with config.json file inside config folder.
+  ```
+    npx sequelize init
   ```
 - Inside the `src/config` folder create a file named as `config.json` and write the following code:
 
@@ -62,3 +74,8 @@ Let's take a look inside the `src` folder
 
 - If you're setting up your development environment, then write the username of your db, password of your db and in dialect mention whatever db you are using for ex: mysql, mariadb etc
 - If you're setting up test or production environment, make sure you also replace host with the hosted db url.
+
+- To run the server execute
+  ```
+    npm run dev
+  ```
