@@ -47,5 +47,3 @@ module.exports = {
   
   !!! *** REFER SEQUELIZE DOCS FOR WIDE RANGE OF INFORMATION *** !!!
  */
-
-// 37:50
